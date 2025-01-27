@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's width */
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e2e2e2;
+}
+
+.weather-app {
+    background-color: #efefef;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    overflow: hidden; /* Prevents content from flowing out */
+}
+
+.weather-app h2 {
+    font-family: "Libre Baskerville", serif;
+}
+
+.weather-app form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows wrapping for better responsiveness */
+}
+
+.weather-app form input[type="text"] {
+    padding: 10px 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    width: 60%; /* Default width */
+    max-width: 100%; /* Prevents overflow */
+}
+
+.weather-app form input[type="submit"] {
+    background-color: #0097b2;
+    border: 2px solid #ffbd59;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.weather-app form input[type="submit"]:hover {
+    background-color: #0097b2e7;
+}
+
+.weather-app .icon img {
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.weather-app .temperature {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.weather-app .description {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.weather-app .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.weather-app .details > div {
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    margin: 10px 5px; /* Consistent margins */
+    flex: 1 1 calc(33.33% - 10px); /* Flexible width for desktop */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .weather-app form {
+        flex-direction: column;
+    }
+
+    .weather-app form input[type="text"] {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 10px;
+    }
+    .weather-app form input[type="submit"] {
+        width: 100%; /* Full width for the submit button */
+    }
+
+    .weather-app .details {
+        flex-direction: column; /* Stack the details vertically */
+        align-items: stretch; /* Stretch to fill the container */
+    }
+
+    .weather-app .details > div {
+        flex: none; /* Prevent resizing */
+        width: 100%; /* Full width for stacked elements */
+        margin: 5px 0; /* Add spacing between elements */
+        text-align: center;
+        justify-content: center;
+
+    }
+}
